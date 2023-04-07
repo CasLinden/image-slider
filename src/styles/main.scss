@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+$primary-color: #2fa8cc;
+$secondary-color: #f4f4f4;
+$box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+
+* {
+  box-sizing: border-box;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+body {
+    background-color: $primary-color;
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+      align-items: center;
+      justify-items: center;
+    width: 99%;
+    height: 100%;
+}
+
+#slideshow-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#view{
+  width: 1000px;
+  height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+#controls-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+  display: grid;
+  align-items: flex-end;
+  grid-template-columns: 1fr 20fr 1fr;
+}
+
+.control{
+  z-index: 10;
+  display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.arrow {
+  width: 2.5rem;
+  height: 100%;
+  color: $secondary-color;
+}
+
+.arrow:hover  {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+#left-arrow{
+  content: url('/src/assets/left.svg')
+}
+
+#right-arrow {
+  content: url('/src/assets/right.svg')
+}
+
+.dot:hover{
+  content: url('/src/assets/heavy-dot.svg')
+}
+
+#dot-controls{
+  display: flex;
+  flex-direction: row;
+  height: 3rem;
+  gap: 2rem;
+  justify-content: center;
+  align-items:flex-end;
+}
+
+.slides-container{
+  background-color: $secondary-color;
+  width: 7000px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  position: absolute;
+  transition: all .8s;
+  left: -1000px;
+}
+
+.slide{
+  width: 1000px;
+  height: 600px;
+}
+
